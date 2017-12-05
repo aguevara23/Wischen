@@ -7,57 +7,24 @@ import Hotels from '../Hotels/Hotels';
 import {TweenMax} from "gsap";
 
 class DeckSlider extends Component {
-  constructor(props){
-    super(props)
+
+  addToFavorites = () => {
+    alert("test")
   }
 
-  good = () => {
-  const {addToFavorites} = this.props;
-  const cards = document.querySelectorAll(".deck-card");
-
-  TweenMax.to(cards[0], .3, {
-    left: "100%",
-    onCompleteParams:[this],
-    onComplete: (t) => {
-      const { collection } = t.state;
-      // function to add hotel to favorites
-      addToFavorites(collection[0]);
-
-      collection.splice(0, 1);
-
-      this.setState({
-        collection
-      })
+  addToDiscard = () => {
+    alert("bad")
+  }
 
 
-    },
-  });
-}
-
-bad = () => {
-  const cards = document.querySelectorAll(".deck-card");
-
-  TweenMax.to(cards[0], .3, {
-    left: 0,
-    onCompleteParams:[this],
-    onComplete: (t) => {
-      const { collection } = t.state;
-      collection.splice(0, 1);
-
-      this.setState({
-        collection
-      })
-    },
-  });
-}
 
   render(){
     return (
       <div>
         <Hotels hotels={this.props.hotels}/>
         <div className="deck-buttons">
-          <button className="deck-btn skip" onClick={this.bad}>Skip</button>
-          <button className="deck-btn add" onClick={this.good}>Add</button>
+          <button className="deck-btn skip" onClick={this.addToDiscard}>Skip</button>
+          <button className="deck-btn add" onClick={this.addToFavorites}>Add</button>
         </div>
       </div>
     )
