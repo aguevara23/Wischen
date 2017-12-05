@@ -1,5 +1,8 @@
 .hotel {
-
+  z-index: 100;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .hotel__img {
@@ -9,7 +12,12 @@
 }
 
 .hotel__info {
-  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 20px;
+  /*background: rgba(255, 0, 0, 0.5);*/
 
 }
 /*

@@ -19,8 +19,14 @@ const hotels = (props) => {
     })
 
     return (
-      <div className="deck">
-        {hotelComponents}
+      <div>
+        <div className="deck">
+          {hotelComponents}
+        </div>
+        <div className="deck-buttons">
+          <button className="deck-btn skip" onClick={this.bad}>Skip</button>
+          <button className="deck-btn add" onClick={this.good}>Add</button>
+        </div>
       </div>
 
     )

@@ -1,0 +1,5 @@
+.nav {
+  display: flex;
+  width: 100vw;
+  background: rgba(255, 0, 0, 0.5);
+}

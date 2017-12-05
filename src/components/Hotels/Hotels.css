@@ -6,12 +6,40 @@
 }
 
 .deck__card {
-  width: auto;
+  width: 80vw;
   height: 75vh;
-  /*border: 1px solid black;*/
+  border: 1px solid black;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
   background-color: white;
   box-shadow: 5px 5px 0px 0px rgba(200,200,200,0.33);
+}
+
+.deck-buttons {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.deck-btn {
+  border-radius: 5px;
+  padding: 15px 30px;
+  border: none;
+}
+
+.skip {
+  margin-right: 10px;
+  background-color: red;
+}
+
+.add {
+  margin-left:10px;
+  background-color: lightgreen;
+}
+
+@media (min-width: 800px) {
+  .deck__card {
+    width: auto;
+  }
 }
