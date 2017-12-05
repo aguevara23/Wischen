@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
-import Hotels from './components/Hotels/Hotels';
+import DeckSlider from './components/DeckSlider/DeckSlider';
 import Favorites from './components/Favorites/Favorites';
 import Nav from './components/Nav/Nav';
 
@@ -19,7 +19,7 @@ class App extends Component {
       return <Favorites favorites={favHotels}/>
     }
 
-    return <Hotels hotels={allHotels} />
+    return <DeckSlider hotels={allHotels} />
   }
 
   viewFavorites = () => {
