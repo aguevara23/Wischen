@@ -1,0 +1,18 @@
+.hotel {
+
+}
+
+.hotel__img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.hotel__info {
+  height: 100%;
+
+}
+/*
+webkit-box-shadow: 5px 6px 5px 0px rgba(163,163,163,0.33);
+-moz-box-shadow: 5px 6px 5px 0px rgba(163,163,163,0.33);
+box-shadow: 5px 6px 5px 0px rgba(163,163,163,0.33);*/

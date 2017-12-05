@@ -1,0 +1,53 @@
+{
+  "name": "Wischen",
+  "version": "1.0.0",
+  "description": "Changing the way you book hotels",
+  "main": "index.js",
+  "scripts": {
+    "start:js": "react-scripts start",
+    "start:css": "npm run build:css -- --watch",
+    "start": "npm run build:css && npm-run-all -p start:css start:js",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "postcss -d ./src/compiled ./src/styles/style.css",
+    "build:js": "react-scripts build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "Faker": "^0.7.2",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.13",
+    "gh-pages": "^1.0.0",
+    "gsap": "^1.20.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-hot-loader": "^3.1.1",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^1.0.14",
+    "react-slick": "^0.15.4",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-promise": "^0.5.3",
+    "redux-session": "^1.0.4",
+    "redux-thunk": "^2.2.0",
+    "webpack": "^3.8.1"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^4.1.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-hexrgba": "^1.0.0",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.8",
+    "postcss-mixins": "^6.2.0",
+    "postcss-nested": "^2.1.2",
+    "postcss-simple-vars": "^4.1.0"
+  }
+}
