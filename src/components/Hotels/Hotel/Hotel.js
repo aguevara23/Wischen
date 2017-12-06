@@ -17,7 +17,7 @@ const hotel = (props) => {
   })
   // console.log(reviews)
   return (
-    <div className="hotel" style={{zIndex: z}}>
+    <div className="hotel">
       <img className="hotel__img" src={hotel.images} alt={imgAlt} />
       <div className="hotel__info">
         <div>{hotel.name}</div>

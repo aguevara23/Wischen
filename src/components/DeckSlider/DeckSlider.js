@@ -30,13 +30,13 @@ class DeckSlider extends Component {
       onCompleteParams:[this],
       onComplete: (t) => {
         const { hotels } = t.state;
-        console.log("hotels", hotels)
+        // console.log("hotels", hotels)
         hotels.splice(0, 1);
 
         this.setState({
           hotels
         })
-        console.log("new hotels", this.state.hotels)
+        // console.log("new hotels", this.state.hotels)
         // function to add hotel to favorites
       }
     });
@@ -53,22 +53,30 @@ class DeckSlider extends Component {
 
     });
   }
+  // componentWillReceiveProps(){
+  //   alert("gon receive new props!")
+  // }
 
+  // componentWillUpdate() {
+  //   alert("gon update!")
+  //
+  // }
 
-  // <Hotels hotels={this.state.hotels}/>
+  // <div className="deck__card">
+  //   <Hotel hotel={this.state.hotels[0]} />
+  // </div>
+  // <div className="deck__card">
+  //   <Hotel hotel={this.state.hotels[1]} />
+  // </div>
+  // <div className="deck__card">
+  //   <Hotel hotel={this.state.hotels[2]} />
+  // </div>
 
   render(){
+
     return (
       <div>
-        <div className="deck__card">
-          <Hotel hotel={this.state.hotels[0]} />
-        </div>
-        <div className="deck__card">
-          <Hotel hotel={this.state.hotels[1]} />
-        </div>
-        <div className="deck__card">
-          <Hotel hotel={this.state.hotels[2]} />
-        </div>
+        <Hotels hotels={this.state.hotels}/>
         <div className="deck-buttons">
           <button className="deck-btn skip" onClick={this.addToDiscard}>Skip</button>
           <button className="deck-btn add" onClick={this.addToFavorites}>Add</button>
