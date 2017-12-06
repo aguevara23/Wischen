@@ -25,17 +25,19 @@ class DeckSlider extends Component {
   addToFavorites = () => {
     const { addToFavorites } = this.props;
     const cards = document.querySelectorAll(".deck__card");
-    TweenMax.to(cards[0], 2, {
+    TweenMax.to(cards[0], .5, {
       left: "100%",
       onCompleteParams:[this],
       onComplete: (t) => {
-        const { hotels } = t.state;
-        // console.log("hotels", hotels)
-        hotels.splice(0, 1);
-
-        this.setState({
-          hotels
-        })
+        console.log(cards[0])
+        cards[0].parentNode.removeChild(cards[0])
+        // const { hotels } = t.state;
+        // // console.log("hotels", hotels)
+        // hotels.splice(0, 1);
+        //
+        // this.setState({
+        //   hotels
+        // })
         // console.log("new hotels", this.state.hotels)
         // function to add hotel to favorites
       }
@@ -44,8 +46,13 @@ class DeckSlider extends Component {
 
   addToDiscard = () => {
     const cards = document.querySelectorAll(".deck__card");
-    TweenMax.to(cards[0], 2, {
-      x: "-100%"
+    TweenMax.to(cards[0], .5, {
+      left: 0,
+      onCompleteParams:[this],
+      onComplete: (t) => {
+        console.log(cards[0])
+        cards[0].parentNode.removeChild(cards[0])
+      }
       // onCompleteParams:[this],
       // onComplete: (t) => {
       //   const { collection } = t.state;
