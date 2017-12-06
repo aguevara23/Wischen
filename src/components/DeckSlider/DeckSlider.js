@@ -12,6 +12,7 @@ class DeckSlider extends Component {
 
     const hotels = [];
     const favorites = [];
+    const discard = [];
 
     for (let x in props.hotels) hotels.push(props.hotels[x]);
 
@@ -29,8 +30,18 @@ class DeckSlider extends Component {
       left: "100%",
       onCompleteParams:[this],
       onComplete: (t) => {
-        console.log(cards[0])
+        const { hotels } = t.state
+        // console.log( "from addToFavorites", hotels )
+        // const favHotel = cards[0];
+        // console.log(favHotel === hotels[0]);
+        // addToFavorites(favHotel)
+        // console.log("fav hotel", favHotel)
         cards[0].parentNode.removeChild(cards[0])
+
+        // hotels.splice(0, 1);
+        // this.setState({
+        //   hotels
+        // })
         // const { hotels } = t.state;
         // // console.log("hotels", hotels)
         // hotels.splice(0, 1);
@@ -40,6 +51,7 @@ class DeckSlider extends Component {
         // })
         // console.log("new hotels", this.state.hotels)
         // function to add hotel to favorites
+        // function to add to discard pile?
       }
     });
   }
@@ -47,7 +59,7 @@ class DeckSlider extends Component {
   addToDiscard = () => {
     const cards = document.querySelectorAll(".deck__card");
     TweenMax.to(cards[0], .5, {
-      left: 0,
+      left: "-100%",
       onCompleteParams:[this],
       onComplete: (t) => {
         console.log(cards[0])

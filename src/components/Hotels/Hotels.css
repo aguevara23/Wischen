@@ -6,10 +6,19 @@
 }
 
 .deck__card {
-  position: absolute;
+  /*original styling*/
+  /*position: absolute;
   left: 50%;
-  transform: translate(-50%);
-  background-color: white;
+  transform: translate(-50%);*/
+  /*background-color: white;*/
+
+  /*new styling*/
+  width: 100vw;
+  height: 100vh;
+  background: none;
+  position: absolute;
+  top: 0;
+  /*left: 0;*/
 }
 
 .deck-buttons {
@@ -17,11 +26,13 @@
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 100;
 }
 .deck-btn {
   border-radius: 5px;
   padding: 15px 30px;
   border: none;
+  z-index: 1000;
 }
 
 .skip {
@@ -34,8 +45,8 @@
   background-color: lightgreen;
 }
 
-@media (min-width: 800px) {
+/*@media (min-width: 800px) {
   .deck__card {
     width: auto;
   }
-}
+}*/
