@@ -6,14 +6,10 @@
 }
 
 .deck__card {
-  width: 80vw;
-  height: 75vh;
-  border: 1px solid black;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
   background-color: white;
-  box-shadow: 5px 5px 0px 0px rgba(200,200,200,0.33);
 }
 
 .deck-buttons {

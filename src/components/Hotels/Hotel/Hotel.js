@@ -7,8 +7,6 @@ const hotel = (props) => {
   const { hotel, z } = props;
   const imgAlt =`${hotel.name} at ${hotel.address.street}, ${hotel.address.city}`;
 
-  console.log(z)
-
   const reviews = hotel.reviews.map(review => {
     return (
       <div>
