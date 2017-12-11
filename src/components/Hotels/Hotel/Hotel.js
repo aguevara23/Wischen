@@ -15,7 +15,7 @@ const hotel = (props) => {
       </div>
     )
   })
-  console.log("hotel style", style)
+
   return (
     <div className="hotel" style={style}>
       <img className="hotel__img" src={hotel.images} alt={imgAlt} />

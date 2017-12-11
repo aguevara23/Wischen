@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {add_toFav} from '../../redux/actions';
 // import {bindActionCreators} from 'redux';
 import Hotels from '../Hotels/Hotels';
-// import Hotel from '../Hotels/Hotel/Hotel';
+import Hotel from '../Hotels/Hotel/Hotel';
 import {TweenMax} from "gsap";
 
 class DeckSlider extends Component {
@@ -83,21 +83,30 @@ class DeckSlider extends Component {
   //
   // }
 
-  // <div className="deck__card">
-  //   <Hotel hotel={this.state.hotels[0]} />
-  // </div>
-  // <div className="deck__card">
-  //   <Hotel hotel={this.state.hotels[1]} />
-  // </div>
-  // <div className="deck__card">
-  //   <Hotel hotel={this.state.hotels[2]} />
-  // </div>
+  // <Hotels hotels={this.state.hotels}/>
 
   render(){
+    const style= {
+      position: "absolute",
+      top: "0",
+      left: "50%",
+      transform: "translateX(-50%)",
+      boxShadow: '0 14px 28px rgba(0,0,0,0.10), 0 10px 10px rgba(0,0,0,0.10)'
+    }
 
     return (
       <div>
-        <Hotels hotels={this.state.hotels}/>
+        <div className="deck">
+          <div className="deck__card">
+            <Hotel style={{...style, zIndex:'100'}} hotel={this.state.hotels[0]} hotels={this.state.hotels} />
+          </div>
+          <div className="deck__card">
+            <Hotel style={{...style, zIndex:'90'}} hotel={this.state.hotels[1]} hotels={this.state.hotels} />
+          </div>
+          <div className="deck__card">
+            <Hotel style={{...style, zIndex:'80'}} hotel={this.state.hotels[2]} hotels={this.state.hotels} />
+          </div>
+        </div>
         <div className="deck-buttons">
           <button className="deck-btn skip" onClick={this.addToDiscard}>Skip</button>
           <button className="deck-btn add" onClick={this.addToFavorites}>Add</button>

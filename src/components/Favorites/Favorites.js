@@ -11,7 +11,9 @@ const favorites = (props) => {
   }
 
   const favStyling={
-    width: 'auto'
+    width: 'auto',
+    height: '500px',
+    boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)'
   }
 
   const favoriteHotels = Object.keys(props.favorites)

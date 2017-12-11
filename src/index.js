@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './compiled/style.css';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import Root from './Root';
