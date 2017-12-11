@@ -7,7 +7,9 @@ import thunk from 'redux-thunk';
 const middleware = applyMiddleware(thunk, createLogger());
 const persistedState = sessionStorage.getItem('reduxState') ? JSON.parse(sessionStorage.getItem('reduxState')) : {}
 
-const store = createStore(rootReducer, persistedState, middleware);
+// This store is used when when want session storage
+// const store = createStore(rootReducer, persistedState, middleware);
+const store = createStore(rootReducer, middleware);
 
 store.subscribe(() => {
   console.log("store changed", store.getState());

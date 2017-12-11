@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {add_toFav} from '../../redux/actions';
-import {bindActionCreators} from 'redux';
+// import {bindActionCreators} from 'redux';
 import Hotels from '../Hotels/Hotels';
-import Hotel from '../Hotels/Hotel/Hotel';
+// import Hotel from '../Hotels/Hotel/Hotel';
 import {TweenMax} from "gsap";
 
 class DeckSlider extends Component {
@@ -12,7 +12,7 @@ class DeckSlider extends Component {
 
     const hotels = [];
     const favorites = [];
-    const discard = [];
+    // const discard = [];
 
     for (let x in props.hotels) hotels.push(props.hotels[x]);
 
@@ -31,17 +31,19 @@ class DeckSlider extends Component {
       onCompleteParams:[this],
       onComplete: (t) => {
         const { hotels } = t.state
-        // console.log( "from addToFavorites", hotels )
-        // const favHotel = cards[0];
-        // console.log(favHotel === hotels[0]);
-        // addToFavorites(favHotel)
-        // console.log("fav hotel", favHotel)
-        cards[0].parentNode.removeChild(cards[0])
 
-        // hotels.splice(0, 1);
-        // this.setState({
-        //   hotels
-        // })
+        console.log("hotels in addToFav", hotels)
+        // console.log("fav hotel", favHotel);
+        // addToFavorites(favHotel)
+
+
+        const splicedHotel = hotels.splice(0, 1);
+        console.log("spliced hotel", splicedHotel[0])
+        this.setState({
+          hotels
+        })
+
+        addToFavorites(splicedHotel[0])
         // const { hotels } = t.state;
         // // console.log("hotels", hotels)
         // hotels.splice(0, 1);

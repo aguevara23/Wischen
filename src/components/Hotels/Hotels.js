@@ -21,12 +21,18 @@ class Hotels extends Component {
   render() {
     const hotelList = [...this.state.hotels];
     let max = hotelList.length;
+    const style= {
+      position: "absolute",
+      top: "0",
+      left: "50%",
+      transform: "translateX(-50%)"
+    }
 
     const hotelComponents = hotelList.map((hotel, index) => {
       max -= 1;
       return (
         <div className="deck__card" style={{zIndex: max}}>
-          <Hotel key={index} hotel={hotel}/>
+          <Hotel key={index} hotel={hotel} style={style}/>
         </div>
       )
     })

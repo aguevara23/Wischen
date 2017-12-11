@@ -4,7 +4,7 @@ import './Hotel.css'
 
 const hotel = (props) => {
 
-  const { hotel, z } = props;
+  const { hotel, style } = props;
   const imgAlt =`${hotel.name} at ${hotel.address.street}, ${hotel.address.city}`;
 
   const reviews = hotel.reviews.map(review => {
@@ -15,9 +15,9 @@ const hotel = (props) => {
       </div>
     )
   })
-  // console.log(reviews)
+  console.log("hotel style", style)
   return (
-    <div className="hotel">
+    <div className="hotel" style={style}>
       <img className="hotel__img" src={hotel.images} alt={imgAlt} />
       <div className="hotel__info">
         <div>{hotel.name}</div>

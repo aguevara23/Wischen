@@ -1,7 +1,7 @@
-import {
-  // GET_HOTELS,
-  ADD_TO_FAV
-} from '../constants';
+// import {
+//   // GET_HOTELS,
+//   ADD_TO_FAV
+// } from '../constants';
 
 // export function get_allHotels () {};
 
