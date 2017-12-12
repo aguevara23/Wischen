@@ -5,14 +5,12 @@ const favorites = (props) => {
   const style={
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr',
-    gridColumnGap: '20px',
+    gridColumnGap: '15px',
     gridRowGap: '20px',
     margin: '50px 30px'
   }
 
   const favStyling={
-    width: 'auto',
-    height: '500px',
     boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)'
   }
 

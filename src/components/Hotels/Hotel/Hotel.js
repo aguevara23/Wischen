@@ -11,7 +11,7 @@ const hotel = (props) => {
     return (
       <div>
         <div>{review.comment}</div>
-        <div>- {review.name}</div>
+        <div className="hotel__review__author">- {review.name}</div>
       </div>
     )
   })

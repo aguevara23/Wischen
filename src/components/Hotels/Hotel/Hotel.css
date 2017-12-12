@@ -26,15 +26,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 15px;
-  /*background: rgba(255, 0, 0, 0.5);*/
+  padding: 10px 15px;
 }
 
 .hotel__info__top {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 15px 0;
   border-bottom: 1px solid black;
 }
 
@@ -53,8 +52,37 @@
   text-transform: capitalize;
 }
 
+.hotel__amenities {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.hotel__amenities li {
+  list-style: square;
+  font-weight: lighter;
+}
+
+.hotel__info__block {
+  padding: 10px 0;
+}
+
+.hotel__info__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
 .hotel__map {
   width: 100%;
-  height: 40%;
+  height: 60%;
   background: rgba(255, 0, 0, 0.5);
+}
+
+.hotel__review__author {
+  font-weight: bold;
+  margin-top: 3px;
 }
