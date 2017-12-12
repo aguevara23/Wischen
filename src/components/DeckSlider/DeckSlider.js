@@ -1,66 +1,55 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {add_toFav} from '../../redux/actions';
+import {add_toFav, set_newHotels} from '../../redux/actions';
 // import {bindActionCreators} from 'redux';
 import Hotels from '../Hotels/Hotels';
 import Hotel from '../Hotels/Hotel/Hotel';
-import {TweenMax} from "gsap";
+import {TimelineMax} from "gsap";
 
 class DeckSlider extends Component {
   constructor(props){
     super(props)
 
     const hotels = [];
-    const favorites = [];
-    // const discard = [];
 
     for (let x in props.hotels) hotels.push(props.hotels[x]);
 
     this.state = {
-      hotels,
-      favorites
+      hotels
     };
   }
 
 
-  addToFavorites = () => {
-    const { addToFavorites } = this.props;
+  addToFavs = () => {
+    const { addToFavorites, setNewHotels } = this.props;
     const cards = document.querySelectorAll(".deck__card");
-    TweenMax.to(cards[0], .5, {
+    const tl = new TimelineMax();
+    tl.to(cards[0], .3, {
+      y: '-=30'
+    })
+    .to(cards[0], 1, {
       left: "100%",
       onCompleteParams:[this],
       onComplete: (t) => {
         const { hotels } = t.state
 
-        console.log("hotels in addToFav", hotels)
-        // console.log("fav hotel", favHotel);
-        // addToFavorites(favHotel)
-
-
         const splicedHotel = hotels.splice(0, 1);
-        console.log("spliced hotel", splicedHotel[0])
-        this.setState({
-          hotels
-        })
-
+        // cards[0].parentNode.removeChild(cards[0])
         addToFavorites(splicedHotel[0])
-        // const { hotels } = t.state;
-        // // console.log("hotels", hotels)
-        // hotels.splice(0, 1);
-        //
-        // this.setState({
-        //   hotels
-        // })
-        // console.log("new hotels", this.state.hotels)
-        // function to add hotel to favorites
-        // function to add to discard pile?
+        setNewHotels(hotels)
+        // console.log(splicedHotel[0])
       }
-    });
+    })
+    .to(cards, 0, {
+      left: '0',
+      y: '0'
+    })
   }
 
   addToDiscard = () => {
     const cards = document.querySelectorAll(".deck__card");
-    TweenMax.to(cards[0], .5, {
+    let tl = new TimelineMax();
+    tl.to(cards[0], .5, {
       left: "-100%",
       onCompleteParams:[this],
       onComplete: (t) => {
@@ -109,7 +98,7 @@ class DeckSlider extends Component {
         </div>
         <div className="deck-buttons">
           <button className="deck-btn skip" onClick={this.addToDiscard}>Skip</button>
-          <button className="deck-btn add" onClick={this.addToFavorites}>Add</button>
+          <button className="deck-btn add" onClick={this.addToFavs}>Add</button>
         </div>
       </div>
     )
@@ -120,6 +109,9 @@ function mapDispatchToProps(dispatch) {
     return({
         addToFavorites: (hotel) => {
           dispatch(add_toFav(hotel))
+        },
+        setNewHotels: (hotels) => {
+          dispatch(set_newHotels(hotels))
         }
     })
 }

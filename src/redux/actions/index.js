@@ -1,5 +1,5 @@
 // import {
-//   // GET_HOTELS,
+//   SET_HOTELS,
 //   ADD_TO_FAV
 // } from '../constants';
 
@@ -11,3 +11,10 @@ export function add_toFav(hotel) {
     payload: hotel
   }
 };
+
+export function set_newHotels(hotels) {
+  return {
+    type: 'SET_HOTELS',
+    payload: hotels
+  }
+}
