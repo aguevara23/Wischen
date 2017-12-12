@@ -31,8 +31,12 @@ class App extends Component {
   }
 
   render() {
+    const style={
+      height: '100%'
+    }
+
     return (
-      <div>
+      <div style={style}>
         <Nav viewFavorites={this.viewFavorites} viewAllHotels={this.viewAllHotels}/>
         {this.renderComponents()}
       </div>

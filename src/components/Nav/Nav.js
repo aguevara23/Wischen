@@ -5,8 +5,8 @@ const Nav = ({viewFavorites, viewAllHotels}) => {
 
   return (
     <div className="nav">
-      <button onClick={viewAllHotels}>View All Hotels</button>
-      <button onClick={viewFavorites}>View Favorites</button>
+      <button className="nav__button nav__all" onClick={viewAllHotels}>All Hotels</button>
+      <button className="nav__button nav__fav" onClick={viewFavorites}>Favorites</button>
     </div>
   )
 }
