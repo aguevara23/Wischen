@@ -2,13 +2,22 @@
   background: white;
   border: 1px solid black;
   border-radius: 10px;
-  width: 500px;
-  height: 80vh;
+  width: 450px;
+  height: 75vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .hotel__img {
   width: 100%;
+  height: 250px;
   display: block;
+}
+
+.hotel__img img {
+  min-width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -17,11 +26,35 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding-bottom: 20px;
+  padding: 15px;
   /*background: rgba(255, 0, 0, 0.5);*/
-
 }
-/*
-webkit-box-shadow: 5px 6px 5px 0px rgba(163,163,163,0.33);
--moz-box-shadow: 5px 6px 5px 0px rgba(163,163,163,0.33);
-box-shadow: 5px 6px 5px 0px rgba(163,163,163,0.33);*/
+
+.hotel__info__top {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid black;
+}
+
+.hotel__price {
+  padding-right: 20px;
+  font-weight: bold;
+}
+
+.hotel__top__name {
+  padding-left: 20px;
+}
+
+.hotel__name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.hotel__map {
+  width: 100%;
+  height: 40%;
+  background: rgba(255, 0, 0, 0.5);
+}

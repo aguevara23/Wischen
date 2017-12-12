@@ -6,24 +6,16 @@
 }
 
 .deck__card {
-  /*original styling*/
-  /*position: absolute;
-  left: 50%;
-  transform: translate(-50%);*/
-  /*background-color: white;*/
-
-  /*new styling*/
   width: 100vw;
   height: 100vh;
   background: none;
   position: absolute;
   top: 0;
-  /*left: 0;*/
 }
 
 .deck-buttons {
   position: absolute;
-  bottom: 7%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
